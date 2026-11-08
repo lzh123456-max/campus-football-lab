@@ -36,3 +36,7 @@ Possible future improvements, not completed work or a fabricated schedule:
 - https://webtech.landrock.io/slides/assignment.html
 
 Read the code and edit the English content in your own words before presenting it. The five-minute presentation is live, without slides; explain the decisions you made and the behaviour of the interactive page.
+
+## 2026-11-08 — A fifth page for play
+
+Added a standalone penalty challenge after reviewing the idea of theme-related interactive toys. It has three aim directions, an independent random keeper, five shots, scoring and replay. The original four-page scope above records the starting point. The current site has five pages.

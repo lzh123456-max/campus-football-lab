@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">A five-shot campus penalty challenge</title>
+  <desc id="desc">An original football illustration: a lime-shirted goalkeeper dives to the left as a football follows a curved dashed path into the right side of a white goal.</desc>
+  <defs>
+    <pattern id="net" width="24" height="21" patternUnits="userSpaceOnUse"><path d="M24 0H0v21" fill="none" stroke="#f5f3e8" stroke-opacity=".28" stroke-width="1"/></pattern>
+    <marker id="arrow" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 11 6 1 11Z" fill="#d7f85e"/></marker>
+  </defs>
+  <path fill="#122f25" d="M0 0h800v500H0z"/>
+  <path fill="#1b4032" d="M0 242h800v258H0z"/>
+  <path fill="#254b37" d="M0 330h800v87H0z"/>
+  <path d="M87 266 25 500M713 266l62 234M87 266h626M215 500c12-115 358-115 370 0" fill="none" stroke="#f5f3e8" stroke-opacity=".4" stroke-width="2"/>
+  <path d="M95 71h610v201H95z" fill="#0b251f"/>
+  <path d="M95 71h610v201H95z" fill="url(#net)"/>
+  <path d="M95 272V71h610v201" fill="none" stroke="#f5f3e8" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M95 272h610" fill="none" stroke="#f5f3e8" stroke-width="3"/>
+  <path d="M102 79 120 247h566L698 79M120 247l-25 25M686 247l19 25" fill="none" stroke="#f5f3e8" stroke-opacity=".4" stroke-width="2"/>
+  <ellipse cx="299" cy="290" rx="74" ry="10" fill="#0a211a" opacity=".4"/>
+  <g transform="translate(302 190) rotate(-28)">
+    <path d="m-10 23-16 72h17L8 29M13 24l18 71h17L31 19" fill="#d7f85e" stroke="#122f25" stroke-width="3"/>
+    <path d="m-25 93-6 12h24V94M30 94v12h26l-10-12" fill="#f5f3e8" stroke="#122f25" stroke-width="3"/>
+    <path d="m-15-23-47-29-7 13 47 36M24-20l49-31 8 14L35 0" fill="#d7f85e" stroke="#122f25" stroke-width="3" stroke-linejoin="round"/>
+    <path d="m-60-54-11-11-11 10 12 17M71-53l12-13 12 11-13 18" fill="#f5f3e8" stroke="#122f25" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M-19-29h43l13 57h-62z" fill="#d7f85e" stroke="#122f25" stroke-width="3"/>
+    <path d="M0-12v25M-6-7l6-5" fill="none" stroke="#122f25" stroke-width="5"/>
+    <ellipse cy="-45" rx="15" ry="18" fill="#f5f3e8" stroke="#122f25" stroke-width="3"/>
+    <path d="M-14-50q14-19 29 0" fill="#122f25"/>
+  </g>
+  <path d="M407 413C473 389 481 252 621 155" fill="none" stroke="#d7f85e" stroke-width="5" stroke-linecap="round" stroke-dasharray="12 11" marker-end="url(#arrow)"/>
+  <ellipse cx="407" cy="416" rx="7" ry="4" fill="#f5f3e8"/>
+  <g transform="translate(549 249) rotate(18)">
+    <circle r="35" fill="#f5f3e8" stroke="#122f25" stroke-width="2"/>
+    <path d="m0-16 16 11-6 18h-20l-6-18z" fill="#122f25"/>
+    <path d="M0-16v-18M16-5l17-6M10 13l10 15M-10 13l-10 15M-16-5l-17-6" stroke="#122f25" stroke-width="2"/>
+  </g>
+  <path d="M576 279l-24 14M584 293l-19 12" stroke="#f5f3e8" stroke-opacity=".6" stroke-width="3" stroke-linecap="round"/>
+  <g fill="#d7f85e"><circle cx="652" cy="143" r="6"/><path d="M732 112h22v3h-22zM741 102h3v23h-3z"/></g>
+</svg>

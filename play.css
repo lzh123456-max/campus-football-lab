@@ -1,0 +1,115 @@
+/* A short, user-initiated penalty game. All movement ends after one shot. */
+.play-page .page-intro, main:has(.penalty-game) > .page-intro { padding-bottom: 32px; }
+.game-layout { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); gap: 32px; align-items: start; margin-bottom: 80px; }
+.game-layout > *, .game-panel { min-width: 0; }
+.penalty-game { background: var(--white, #fffef8); border: 1px solid var(--line, #cbd1c3); padding: 27px; }
+.game-topline { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px 25px; margin-bottom: 19px; }
+.game-topline p { margin: 0; font-size: 11px; color: var(--muted, #5d695f); line-height: 1.4; }
+.game-topline h2 { font-size: clamp(26px, 2.6vw, 33px); margin: 10px 0 0; }
+.game-scoreboard { display: flex; align-items: end; gap: 23px; }
+.game-scoreboard p { font-size: 9px; letter-spacing: .08em; }
+.game-scoreboard strong { display: block; margin-top: 7px; white-space: nowrap; }
+.game-scoreboard .score-total { font-size: 12px; font-weight: 400; letter-spacing: 0; }
+.game-scoreboard #game-round, .game-scoreboard #game-score { margin-left: 0; }
+.game-topline #game-round { display: inline-block; margin-left: 6px; color: var(--forest, #122f25); font-size: 18px; font-weight: 750; font-variant-numeric: tabular-nums; }
+.game-topline #game-score { display: inline-block; color: var(--forest, #122f25); font-size: 43px; font-weight: 750; letter-spacing: -.055em; line-height: 1; margin-left: 8px; font-variant-numeric: tabular-nums; }
+.shot-history { display: flex; align-items: center; gap: 8px; margin: 0 0 23px; padding: 0; list-style: none; }
+.shot-history li { position: relative; display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #aeb8a6; color: #6b7868; background: #f1f3e9; border-radius: 50%; font-size: 11px; font-weight: 700; line-height: 1; }
+.shot-history li.is-current { border-color: #122f25; color: #122f25; box-shadow: inset 0 0 0 1px #122f25; }
+.shot-history li.goal, .shot-history li.is-goal, .shot-history li[data-outcome='goal'] { background: #d7f85e; color: #122f25; border-color: #8aa52e; }
+.shot-history li.saved, .shot-history li.save, .shot-history li.is-save, .shot-history li[data-outcome='save'], .shot-history li[data-outcome='saved'] { background: #e8e7dc; color: #66684d; border-color: #a3aa98; }
+
+.penalty-field { --aim-x: 50%; --keeper-x: 50%; --keeper-tilt: 0deg; position: relative; isolation: isolate; width: 100%; aspect-ratio: 16 / 9; min-height: 260px; overflow: hidden; background: repeating-linear-gradient(0deg, transparent 0 16.66%, #254c36 16.66% 33.33%), linear-gradient(180deg, #102b22 0%, #1b4032 30%, #2e573c 100%); border: 1px solid #163d2b; }
+.penalty-field::before { content: ''; position: absolute; z-index: 0; left: 7%; top: 48%; width: 86%; height: 74%; border: 2px solid #e3ead075; transform: perspective(300px) rotateX(18deg); transform-origin: center top; }
+.penalty-field::after { content: ''; position: absolute; z-index: 0; left: 26%; top: 66%; width: 48%; height: 26%; border: 2px solid #e3ead05c; border-top: 0; border-radius: 0 0 50% 50%; }
+.goal-frame, .goal-net { position: absolute; top: 10%; left: 12%; width: 76%; height: 40%; }
+.goal-frame { z-index: 3; border: 7px solid #f5f3e8; border-bottom-width: 3px; box-shadow: 0 6px 0 #071e1857, inset 0 0 0 1px #122f2559; pointer-events: none; }
+.goal-net { z-index: 1; background-color: #0b251f99; background-image: repeating-linear-gradient(0deg, transparent 0 16px, #f5f3e83b 16px 17px), repeating-linear-gradient(90deg, transparent 0 19px, #f5f3e83b 19px 20px); border: 1px solid #f5f3e85c; box-shadow: inset 0 -14px 20px #0b211a52; }
+.goal-frame > .goal-net { inset: 0; width: 100%; height: 100%; z-index: -1; border: 0; }
+.keeper { position: absolute; z-index: 4; left: 50%; top: 32%; width: 66px; height: 116px; transform: translate(-50%, -50%) rotate(0deg); transform-origin: 50% 70%; filter: drop-shadow(0 5px 2px #0a201b66); }
+.keeper > span { position: absolute; display: block; }
+.keeper-head { width: 28%; height: 17%; left: 36%; top: 0; background: #f5f3e8; border: 2px solid #122f25; border-radius: 45% 45% 43% 43%; z-index: 3; }
+.keeper-head::before { content: ''; position: absolute; top: -2px; left: -2px; width: calc(100% + 4px); height: 36%; border-radius: 60% 60% 0 0; background: #122f25; }
+.keeper-body { width: 43%; height: 43%; left: 28.5%; top: 19%; background: #d7f85e; border: 1.5px solid #122f25; border-radius: 7px 7px 3px 3px; z-index: 2; }
+.keeper-body::after { content: '1'; position: absolute; inset: 13% 0 auto; color: #122f25; text-align: center; font: 700 18px/1 Arial, sans-serif; }
+.keeper-arm-left, .keeper-arm-right { width: 15%; height: 43%; top: 21%; background: #d7f85e; border: 1.5px solid #122f25; border-radius: 7px; transform-origin: 50% 8%; }
+.keeper-arm-left { left: 24%; transform: rotate(42deg); }
+.keeper-arm-right { right: 24%; transform: rotate(-42deg); }
+.keeper-arm-left::after, .keeper-arm-right::after { content: ''; position: absolute; left: -2px; bottom: -5px; width: calc(100% + 4px); height: 26%; background: #f5f3e8; border: 1.5px solid #122f25; border-radius: 4px; }
+.keeper-leg-left, .keeper-leg-right { width: 18%; height: 39%; top: 58%; background: #d7f85e; border: 1.5px solid #122f25; border-top-width: 4px; transform-origin: top center; }
+.keeper-leg-left { left: 30%; transform: rotate(13deg); }
+.keeper-leg-right { right: 30%; transform: rotate(-13deg); }
+.keeper-leg-left::after, .keeper-leg-right::after { content: ''; position: absolute; bottom: -4px; left: -3px; width: calc(100% + 8px); height: 18%; background: #f5f3e8; border: 1px solid #122f25; border-radius: 2px; }
+.penalty-spot { position: absolute; left: 50%; top: 81%; width: 9px; height: 5px; z-index: 1; transform: translate(-50%, -50%); border-radius: 50%; background: #f5f3e8; }
+.penalty-ball { position: absolute; z-index: 6; left: 50%; top: 80%; width: 38px; height: 38px; transform: translate(-50%, -50%) scale(1) rotate(0deg); transform-origin: center; filter: drop-shadow(0 5px 2px #0a211a75); }
+.penalty-ball svg { width: 100%; height: 100%; }
+.penalty-field.is-shooting .penalty-ball { left: var(--aim-x); top: 26%; transform: translate(-50%, -50%) scale(.6) rotate(480deg); transition: left 600ms cubic-bezier(.2,.68,.4,1), top 600ms cubic-bezier(.18,.78,.35,1), transform 600ms ease-out; }
+.penalty-field.is-shooting .keeper { left: var(--keeper-x); transform: translate(-50%, -50%) rotate(var(--keeper-tilt)); transition: left 600ms cubic-bezier(.22,.7,.24,1), transform 600ms cubic-bezier(.22,.7,.24,1); }
+.penalty-field.is-goal .penalty-ball { left: var(--aim-x); top: 30%; transform: translate(-50%, -50%) scale(.54) rotate(510deg); transition: none; }
+.penalty-field.is-save .penalty-ball, .penalty-field.is-saved .penalty-ball { left: var(--aim-x); top: 47%; transform: translate(-50%, -50%) scale(.67) rotate(410deg); transition: none; }
+.shot-stamp { position: absolute; z-index: 8; top: 65%; left: 50%; transform: translate(-50%, -50%) rotate(-5deg); margin: 0; padding: 9px 17px; color: #122f25; background: #d7f85e; border: 1px solid #122f25; font-size: clamp(15px, 2vw, 24px); font-weight: 750; letter-spacing: -.04em; line-height: 1.2; white-space: nowrap; box-shadow: 3px 3px 0 #0a211a66; }
+.penalty-field.is-save .shot-stamp, .penalty-field.is-saved .shot-stamp { background: #f5f3e8; }
+.field-caption { position: absolute; bottom: 9px; left: 10px; right: 10px; z-index: 7; color: #f5f3e8b3; font-size: 8px; font-weight: 700; letter-spacing: .07em; line-height: 1.5; text-align: center; }
+.game-instructions { margin: 19px 0 -6px; color: var(--muted, #5d695f); font-size: 12px; }
+.game-instructions strong { color: var(--forest, #122f25); }
+
+.aim-controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; margin: 23px 0 19px; }
+.aim-controls button { display: inline-flex; justify-content: center; align-items: center; gap: 7px; min-width: 0; min-height: 48px; padding: 11px 8px; border: 1px solid #a3ae9b; background: transparent; color: #122f25; font-size: 12px; font-weight: 700; line-height: 1.3; }
+.aim-controls button:hover:not(:disabled) { background: #e7ecd8; }
+.aim-controls button[aria-pressed='true'] { background: #d7f85e; border-color: #122f25; color: #122f25; box-shadow: inset 0 -3px 0 #122f25; }
+.aim-controls button:disabled { opacity: .55; }
+.game-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.game-actions .button { min-height: 48px; }
+.game-actions .button:disabled { transform: none; }
+.game-status { min-height: 3.3em; margin: 18px 0 0; font-size: 13px; line-height: 1.6; color: var(--muted, #5d695f); }
+.game-summary { margin-top: 23px; padding-top: 23px; border-top: 1px solid var(--line, #cbd1c3); }
+.game-summary h2 { font-size: clamp(29px, 3vw, 39px); margin-bottom: 14px; }
+.game-summary p { font-size: 14px; color: var(--muted, #5d695f); }
+.game-summary strong { color: var(--forest, #122f25); }
+.game-guide { padding: 28px 0 0 25px; border-top: 1px solid var(--forest, #122f25); border-left: 1px solid var(--line, #cbd1c3); }
+.game-guide h2 { font-size: 31px; margin-bottom: 20px; }
+.game-guide h3 { margin-top: 29px; font-size: 21px; }
+.game-guide p, .game-guide li { font-size: 13px; color: var(--muted, #5d695f); }
+.game-guide ul, .game-guide ol { padding-left: 20px; }
+.game-guide li { padding-left: 2px; margin-bottom: 11px; }
+.game-guide .text-link { font-size: 12px; }
+.game-note { font-size: 11px; color: var(--muted, #5d695f); margin: 19px 0 0; }
+.game-rule { border-left: 3px solid #9abb49; padding-left: 13px; margin-block: 24px; font-size: 12px; line-height: 1.7; color: var(--muted, #5d695f); }
+.game-rule strong { color: var(--forest, #122f25); }
+
+@media (max-width: 1000px) {
+  .game-layout { gap: 25px; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); }
+  .penalty-game { padding: 22px; }
+  .game-guide { padding-left: 20px; }
+  .game-guide h2 { font-size: 27px; }
+}
+@media (max-width: 800px) {
+  .game-layout { grid-template-columns: minmax(0, 1fr); gap: 34px; margin-bottom: 50px; }
+  .game-guide { padding: 28px 0 0; border-left: 0; }
+  .game-guide p, .game-guide ul, .game-guide ol { max-width: 650px; }
+}
+@media (max-width: 520px) {
+  .play-page .page-intro, main:has(.penalty-game) > .page-intro { padding-bottom: 27px; }
+  .penalty-game { padding: 17px; }
+  .game-topline { gap: 12px; }
+  .game-topline #game-score { font-size: 37px; }
+  .shot-history { margin-bottom: 18px; gap: 7px; }
+  .shot-history li { width: 31px; height: 31px; }
+  .penalty-field { aspect-ratio: 1.4 / 1; min-height: 260px; }
+  .goal-frame, .goal-net { top: 9%; left: 9%; width: 82%; height: 36%; }
+  .goal-frame { border-width: 5px; border-bottom-width: 2px; }
+  .goal-frame > .goal-net { inset: 0; width: 100%; height: 100%; }
+  .goal-net { background-size: auto; background-image: repeating-linear-gradient(0deg, transparent 0 12px, #f5f3e83b 12px 13px), repeating-linear-gradient(90deg, transparent 0 14px, #f5f3e83b 14px 15px); }
+  .keeper { top: 30%; width: 53px; height: 91px; }
+  .keeper-body::after { font-size: 14px; }
+  .penalty-ball { width: 33px; height: 33px; top: 82%; }
+  .penalty-spot { top: 83%; }
+  .aim-controls { gap: 6px; margin-top: 18px; }
+  .aim-controls button { min-height: 48px; gap: 5px; font-size: 11px; padding-inline: 5px; }
+  .game-actions { gap: 10px; }
+  .game-actions .button { flex: 1 1 auto; padding-inline: 15px; }
+  .shot-stamp { top: 64%; font-size: 17px; padding: 8px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .penalty-ball, .keeper, .aim-controls button { transition-duration: .01ms !important; }
+}
