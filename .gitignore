@@ -1,0 +1,6 @@
+dist/
+node_modules/
+.sites-local/
+.DS_Store
+Thumbs.db
+*.tar.gz
