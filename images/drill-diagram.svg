@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Three-player pass and move</title>
+  <desc id="desc">Three players make a triangle in a ten-metre square. Dashed arrows show the ball passing clockwise; an outer curved arrow shows a player moving into the next space after a pass.</desc>
+  <defs><marker id="pass-arrow" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1 11 6 1 11Z" fill="#d7f85e"/></marker></defs>
+  <path fill="#122f25" d="M0 0h800v500H0z"/>
+  <path fill="#1b4032" d="M74 48h652v404H74z"/>
+  <path d="M102 72h596v356H102z" fill="none" stroke="#f5f3e8" stroke-opacity=".35" stroke-width="2"/>
+  <path d="M399 72v356M102 250h596" fill="none" stroke="#f5f3e8" stroke-opacity=".12" stroke-width="1.5"/>
+  <g fill="#f5f3e8" font-family="Arial,sans-serif" font-size="13" letter-spacing="1"><text x="102" y="39">PASS + MOVE / 3 PLAYERS</text><text x="698" y="39" text-anchor="end">10 × 10 M</text></g>
+  <g fill="none" stroke="#d7f85e" stroke-width="4" stroke-dasharray="10 9" marker-end="url(#pass-arrow)"><path d="M257 334 376 158"/><path d="M430 157 552 334"/><path d="M533 364H279"/></g>
+  <path d="M204 325C151 206 229 111 333 119" fill="none" stroke="#f5f3e8" stroke-opacity=".6" stroke-width="2"/>
+  <path d="m321 110 16 9-17 6" fill="none" stroke="#f5f3e8" stroke-opacity=".6" stroke-width="2"/>
+  <g fill="#d7f85e"><path d="m156 394 11-24 11 24zM622 394l11-24 11 24zM389 97l11-24 11 24z"/></g>
+  <g fill="#f5f3e8" stroke="#122f25" stroke-width="3"><circle cx="240" cy="364" r="29"/><circle cx="404" cy="124" r="29"/><circle cx="570" cy="364" r="29"/></g>
+  <g fill="#122f25" font-family="Arial,sans-serif" font-size="22" font-weight="700" text-anchor="middle"><text x="240" y="372">1</text><text x="404" y="132">2</text><text x="570" y="372">3</text></g>
+  <circle cx="289" cy="338" r="11" fill="#f5f3e8" stroke="#122f25" stroke-width="2"/><path d="m289 332 6 4-2 7h-8l-2-7z" fill="#122f25"/>
+  <g fill="#aebfb3" font-family="Arial,sans-serif" font-size="12"><text x="102" y="476">DASHED = PASS</text><text x="259" y="476">CURVED = MOVE</text><text x="698" y="476" text-anchor="end">PASS. FOLLOW. REPEAT.</text></g>
+</svg>

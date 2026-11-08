@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="850" viewBox="0 0 1000 850" role="img" aria-labelledby="title desc">
+  <title id="title">Make a little space for football</title>
+  <desc id="desc">An original tactical pitch illustration in forest green and lime. Three numbered players share a curved passing route around an oversized football.</desc>
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#f5f3e8" opacity=".17"/></pattern>
+    <marker id="arrow" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 11 6 1 11Z" fill="#d7f85e"/></marker>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="2" dy="15" stdDeviation="0" flood-color="#061b13" flood-opacity=".4"/></filter>
+  </defs>
+  <path fill="#122f25" d="M0 0h1000v850H0z"/>
+  <circle cx="943" cy="52" r="500" fill="#1b4032"/>
+  <path fill="url(#dots)" d="M0 550h260v300H0zM760 0h240v270H760z"/>
+  <g fill="none" stroke="#f5f3e8" stroke-opacity=".18">
+    <path d="M32 92V32h60M908 32h60v60M968 758v60h-60M92 818H32v-60"/>
+    <path d="M70 425h18m-9-9v18M912 425h18m-9-9v18"/>
+  </g>
+  <text x="70" y="80" fill="#f5f3e8" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="2">FIELD NOTES / 01</text>
+  <text x="930" y="80" text-anchor="end" fill="#aebfb3" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.5">PLAY WITH WHAT YOU HAVE</text>
+  <g transform="rotate(-11 500 425)">
+    <path d="M220 78h560v694H220z" fill="#102a20" stroke="#f5f3e8" stroke-opacity=".14"/>
+    <path d="M235 94h530v660H235z" fill="#1b4032"/>
+    <path d="M235 94h530v132H235zm0 264h530v132H235zm0 264h530v132H235z" fill="#214a39" opacity=".65"/>
+    <g fill="none" stroke="#f5f3e8" stroke-width="2.5" stroke-opacity=".6">
+      <path d="M235 94h530v660H235zM235 424h530"/>
+      <circle cx="500" cy="424" r="83"/>
+      <path d="M342 94v105h316V94M414 94v43h172V94M342 754V649h316v105M414 754v-43h172v43"/>
+      <path d="M424 199a83 83 0 0 0 152 0M424 649a83 83 0 0 1 152 0"/>
+      <path d="M235 113a19 19 0 0 0 19-19M746 94a19 19 0 0 0 19 19M235 735a19 19 0 0 1 19 19M746 754a19 19 0 0 1 19-19"/>
+    </g>
+    <g fill="#f5f3e8"><circle cx="500" cy="424" r="4"/><circle cx="500" cy="165" r="4"/><circle cx="500" cy="683" r="4"/></g>
+    <path d="M321 660C280 482 678 635 658 438S446 398 544 218" fill="none" stroke="#d7f85e" stroke-width="6" stroke-dasharray="13 12" stroke-linecap="round" marker-end="url(#arrow)"/>
+    <g font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle">
+      <circle cx="321" cy="660" r="24" fill="#d7f85e"/><text x="321" y="666" fill="#122f25">1</text>
+      <circle cx="658" cy="438" r="24" fill="#d7f85e"/><text x="658" y="444" fill="#122f25">2</text>
+      <circle cx="544" cy="218" r="24" fill="#d7f85e"/><text x="544" y="224" fill="#122f25">3</text>
+    </g>
+  </g>
+  <g transform="translate(464 431) rotate(17)" filter="url(#shadow)">
+    <circle r="118" fill="#f5f3e8" stroke="#0b211a" stroke-width="3"/>
+    <path d="m0-51 49 36-19 57h-60l-19-57z" fill="#122f25"/>
+    <g fill="none" stroke="#122f25" stroke-width="3.5" stroke-linejoin="round">
+      <path d="M0-51V-105M49-15l54-17M30 42l33 47M-30 42l-33 47M-49-15l-54-17"/>
+      <path d="m-29-114 29 9 29-9M99-63l4 31 15 21M92 76l-29 13-15 19M-48 108l-15-19-29-13M-118-11l15-21 4-31"/>
+    </g>
+    <path d="M-91-66C-68-102-17-119 19-109" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(781 594) rotate(8)">
+    <path fill="#d7f85e" d="M-86-39H86v78H-86z"/>
+    <text y="-6" text-anchor="middle" fill="#122f25" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="1">LESS WAITING.</text>
+    <text y="16" text-anchor="middle" fill="#122f25" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="1">MORE PLAYING.</text>
+  </g>
+  <g stroke="#d7f85e" stroke-width="3" fill="none"><path d="M150 248h30m-15-15v30M835 247h24m-12-12v24"/><circle cx="173" cy="670" r="8"/></g>
+  <text x="70" y="788" fill="#aebfb3" font-family="Arial,sans-serif" font-size="12" letter-spacing="1.5">A LITTLE SPACE. A LOT OF TOUCHES.</text>
+  <text x="930" y="788" text-anchor="end" fill="#d7f85e" font-family="Arial,sans-serif" font-size="26">↗</text>
+</svg>
