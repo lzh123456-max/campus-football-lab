@@ -40,3 +40,7 @@ Read the code and edit the English content in your own words before presenting i
 ## 2026-11-08 — A fifth page for play
 
 Added a standalone penalty challenge after reviewing the idea of theme-related interactive toys. It has three aim directions, an independent random keeper, five shots, scoring and replay. The original four-page scope above records the starting point. The current site has five pages.
+
+## 2026-11-09 — Two more ways to play
+
+Expanded the fifth page into a football playground. Added a five-round quick-pass reaction challenge and an eleven-player formation board with 4-3-3, 4-4-2 and 3-5-2 layouts. Each remains a small browser activity with no accounts, external services or saved data. The original penalty challenge remains available.
