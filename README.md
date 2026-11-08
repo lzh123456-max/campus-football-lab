@@ -4,7 +4,7 @@ A student football guide with a drill library, an interactive practice-session b
 
 This is a separate project from Learning HTML, with its own Git history. The first development date is 8 November 2026; weekly development must continue through real subsequent changes.
 
-Read [PROJECT.md](PROJECT.md) for the audience and scope, and [CHANGELOG.md](CHANGELOG.md) for real changes.
+Read [PROJECT.md](PROJECT.md) for the audience and scope. The [development-stage index in CHANGELOG.md](CHANGELOG.md#development-stages-and-commit-evidence) links seven earlier stages to their exact commit times and GitHub diffs, from the initial identity and four-page foundation to the penalty game and two further activities. Those recorded changes span 8–9 November 2026; weekly development remains an ongoing course requirement.
 
 - Website: https://lzh123456-max.github.io/campus-football-lab/
 - Public repository: https://github.com/lzh123456-max/campus-football-lab
